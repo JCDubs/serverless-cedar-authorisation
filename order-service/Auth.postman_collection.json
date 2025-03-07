@@ -1,0 +1,2204 @@
+{
+	"info": {
+		"_postman_id": "8660c068-de44-4d29-87c9-ae0b532b5441",
+		"name": "Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17736637"
+	},
+	"item": [
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "get-steven-order-as-steven--allow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Acce",
+								"value": "application/json, text/plain, */*",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "cedar-refresh",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/orders/4947c18d-5804-48d4-9b66-07309dea1570",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders",
+								"4947c18d-5804-48d4-9b66-07309dea1570"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list-orders-as-steven--allow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Acce",
+								"value": "application/json, text/plain, */*",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "cedar-refresh",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/orders",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list-orders-as-philip--allow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Acce",
+								"value": "application/json, text/plain, */*",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "cedar-refresh",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/orders",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-philip-order-as-steven--deny",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Acce",
+								"value": "application/json, text/plain, */*",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "cedar-refresh",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/orders/04501770-c7d4-40bc-962c-e6590dfb3eb6",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders",
+								"04501770-c7d4-40bc-962c-e6590dfb3eb6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "steven-create-order-for-steven--allow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"orderLines\": [\n        {\n            \"productId\": \"prod-014\",\n            \"productName\": \"Product N\",\n            \"quantity\": 3,\n            \"price\": 49.99,\n            \"total\": 149.97\n        }\n    ],\n    \"branchId\": \"branch-001\",\n    \"comments\": \"\",\n    \"totalAmount\": 149.98\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/orders",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "steven-update-order-for-steven-created-by-steven-pending--allow",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"status\": \"PENDING\",\n    \"orderLines\": [\n        {\n            \"id\": \"017f064c-86fe-479c-8de6-9f0286215e6f\",\n            \"productId\": \"prod-011\",\n            \"productName\": \"Product K\",\n            \"quantity\": 2,\n            \"price\": 99.99,\n            \"total\": 99.99\n        },\n        {\n            \"id\": \"eda5de39-edc7-45a8-905c-b71b7df78f63\",\n            \"productId\": \"prod-010\",\n            \"productName\": \"Product J\",\n            \"quantity\": 2,\n            \"price\": 99.98,\n            \"total\": 199.96\n        }\n    ],\n    \"branchId\": \"branch-002\",\n    \"comments\": \"Special order\",\n    \"totalAmount\": 299.96\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/orders/9b1a5173-a54f-4499-b11f-8c11d3ef5d2f",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders",
+								"9b1a5173-a54f-4499-b11f-8c11d3ef5d2f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "steven-update-order-for-steven-created-by-steven-shipped--deny",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"createdBy\": \"steven.jones@test.com\",\n    \"status\": \"PENDING\",\n    \"orderLines\": [\n        {\n            \"id\": \"017f064c-86fe-479c-8de6-9f0286215e6f\",\n            \"productId\": \"prod-011\",\n            \"productName\": \"Product K\",\n            \"quantity\": 2,\n            \"price\": 99.99,\n            \"total\": 99.99\n        },\n        {\n            \"id\": \"eda5de39-edc7-45a8-905c-b71b7df78f63\",\n            \"productId\": \"prod-010\",\n            \"productName\": \"Product J\",\n            \"quantity\": 2,\n            \"price\": 99.98,\n            \"total\": 199.96\n        }\n    ],\n    \"branchId\": \"branch-002\",\n    \"comments\": \"Special order\",\n    \"totalAmount\": 299.96\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/orders/d05f1bda-2c1c-4638-9765-949a7d7beb8b",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders",
+								"d05f1bda-2c1c-4638-9765-949a7d7beb8b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "steven-update-order-for-philip-pending--deny",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"fda9384e-ddec-4be9-83a0-29056bae94a5\",\n    \"createdBy\": \"philip.roberts@test.com\",\n    \"status\": \"PENDING\",\n    \"orderLines\": [\n        {\n            \"id\": \"017f064c-86fe-479c-8de6-9f0286215e6f\",\n            \"productId\": \"prod-011\",\n            \"productName\": \"Product K\",\n            \"quantity\": 2,\n            \"price\": 99.99,\n            \"total\": 99.99\n        },\n        {\n            \"id\": \"eda5de39-edc7-45a8-905c-b71b7df78f63\",\n            \"productId\": \"prod-010\",\n            \"productName\": \"Product J\",\n            \"quantity\": 2,\n            \"price\": 99.98,\n            \"total\": 199.96\n        }\n    ],\n    \"branchId\": \"branch-002\",\n    \"comments\": \"Special order\",\n    \"totalAmount\": 299.96\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/orders/3eefc250-7560-496c-ac09-ad040f422c02",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders",
+								"3eefc250-7560-496c-ac09-ad040f422c02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "steven-delete-order-for-philip-pending--deny",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"0da8f005-8c81-46a4-8788-8d7041d301f9\",\n    \"createdBy\": \"philip.roberts@test.com\",\n    \"status\": \"PENDING\",\n    \"orderLines\": [\n        {\n            \"id\": \"017f064c-86fe-479c-8de6-9f0286215e6f\",\n            \"productId\": \"prod-011\",\n            \"productName\": \"Product K\",\n            \"quantity\": 2,\n            \"price\": 99.99,\n            \"total\": 99.99\n        },\n        {\n            \"id\": \"eda5de39-edc7-45a8-905c-b71b7df78f63\",\n            \"productId\": \"prod-010\",\n            \"productName\": \"Product J\",\n            \"quantity\": 2,\n            \"price\": 99.98,\n            \"total\": 199.96\n        }\n    ],\n    \"branchId\": \"branch-002\",\n    \"comments\": \"Special order\",\n    \"totalAmount\": 299.96\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/orders/23f10c67-6835-4ce7-90b3-e69713c98739",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders",
+								"23f10c67-6835-4ce7-90b3-e69713c98739"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "steven-create-order-for-philip--deny",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"fda9384e-ddec-4be9-83a0-29056bae94a5\",\n    \"orderLines\": [\n        {\n            \"productId\": \"prod-014\",\n            \"productName\": \"Product N\",\n            \"quantity\": 3,\n            \"price\": 49.99,\n            \"total\": 149.97\n        }\n    ],\n    \"branchId\": \"branch-001\",\n    \"comments\": \"\",\n    \"totalAmount\": 149.98\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/orders",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sale-staff",
+			"item": [
+				{
+					"name": "michael",
+					"item": [
+						{
+							"name": "get-any-order-as-michael--allow",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Acce",
+										"value": "application/json, text/plain, */*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "cedar-refresh",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/orders/23f10c67-6835-4ce7-90b3-e69713c98739",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders",
+										"23f10c67-6835-4ce7-90b3-e69713c98739"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list-orders-as-michael--allow",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Acce",
+										"value": "application/json, text/plain, */*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "cedar-refresh",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/orders",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "michael-create-order-for-steven--allow",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"orderLines\": [\n        {\n            \"productId\": \"prod-014\",\n            \"productName\": \"Product N\",\n            \"quantity\": 3,\n            \"price\": 49.99,\n            \"total\": 149.97\n        }\n    ],\n    \"branchId\": \"branch-001\",\n    \"comments\": \"\",\n    \"totalAmount\": 149.98\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/orders",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "michael-create-order-for-philip--allow",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": \"fda9384e-ddec-4be9-83a0-29056bae94a5\",\n    \"orderLines\": [\n        {\n            \"productId\": \"prod-014\",\n            \"productName\": \"Product N\",\n            \"quantity\": 3,\n            \"price\": 49.99,\n            \"total\": 149.97\n        }\n    ],\n    \"branchId\": \"branch-001\",\n    \"comments\": \"\",\n    \"totalAmount\": 149.98\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/orders",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "michael-update-order-for-steven-created-by-steven-pending--allow",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"createdBy\": \"chris.watkin@test.com\",\n    \"status\": \"PENDING\",\n    \"orderLines\": [\n        {\n            \"id\": \"017f064c-86fe-479c-8de6-9f0286215e6f\",\n            \"productId\": \"prod-011\",\n            \"productName\": \"Product K\",\n            \"quantity\": 2,\n            \"price\": 99.99,\n            \"total\": 99.99\n        },\n        {\n            \"id\": \"eda5de39-edc7-45a8-905c-b71b7df78f63\",\n            \"productId\": \"prod-010\",\n            \"productName\": \"Product J\",\n            \"quantity\": 2,\n            \"price\": 99.98,\n            \"total\": 199.96\n        }\n    ],\n    \"branchId\": \"branch-002\",\n    \"comments\": \"Special order\",\n    \"totalAmount\": 299.96\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/orders/9b1a5173-a54f-4499-b11f-8c11d3ef5d2f",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders",
+										"9b1a5173-a54f-4499-b11f-8c11d3ef5d2f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "michael-update-order-for-steven-created-by-steven-shipped--deny",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"createdBy\": \"steven.jones@test.com\",\n    \"status\": \"PENDING\",\n    \"orderLines\": [\n        {\n            \"id\": \"017f064c-86fe-479c-8de6-9f0286215e6f\",\n            \"productId\": \"prod-011\",\n            \"productName\": \"Product K\",\n            \"quantity\": 2,\n            \"price\": 99.99,\n            \"total\": 99.99\n        },\n        {\n            \"id\": \"eda5de39-edc7-45a8-905c-b71b7df78f63\",\n            \"productId\": \"prod-010\",\n            \"productName\": \"Product J\",\n            \"quantity\": 2,\n            \"price\": 99.98,\n            \"total\": 199.96\n        }\n    ],\n    \"branchId\": \"branch-002\",\n    \"comments\": \"Special order\",\n    \"totalAmount\": 299.96\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/orders/d05f1bda-2c1c-4638-9765-949a7d7beb8b",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders",
+										"d05f1bda-2c1c-4638-9765-949a7d7beb8b"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "emily",
+					"item": [
+						{
+							"name": "get-any-order-as-emily--allow",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 403\", function () {",
+											"    pm.response.to.have.status(403);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Acce",
+										"value": "application/json, text/plain, */*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "cedar-refresh",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/orders/23f10c67-6835-4ce7-90b3-e69713c98739",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders",
+										"23f10c67-6835-4ce7-90b3-e69713c98739"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "emily-create-order-for-steven--allow",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"orderLines\": [\n        {\n            \"productId\": \"prod-014\",\n            \"productName\": \"Product N\",\n            \"quantity\": 3,\n            \"price\": 49.99,\n            \"total\": 149.97\n        }\n    ],\n    \"branchId\": \"branch-001\",\n    \"comments\": \"\",\n    \"totalAmount\": 149.98\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/orders",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "emily-create-order-for-philip--allow",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": \"fda9384e-ddec-4be9-83a0-29056bae94a5\",\n    \"orderLines\": [\n        {\n            \"productId\": \"prod-014\",\n            \"productName\": \"Product N\",\n            \"quantity\": 3,\n            \"price\": 49.99,\n            \"total\": 149.97\n        }\n    ],\n    \"branchId\": \"branch-001\",\n    \"comments\": \"\",\n    \"totalAmount\": 149.98\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/orders",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "emily-update-order-for-steven-created-by-steven-pending--allow",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"createdBy\": \"chris.watkin@test.com\",\n    \"status\": \"PENDING\",\n    \"orderLines\": [\n        {\n            \"id\": \"017f064c-86fe-479c-8de6-9f0286215e6f\",\n            \"productId\": \"prod-011\",\n            \"productName\": \"Product K\",\n            \"quantity\": 2,\n            \"price\": 99.99,\n            \"total\": 99.99\n        },\n        {\n            \"id\": \"eda5de39-edc7-45a8-905c-b71b7df78f63\",\n            \"productId\": \"prod-010\",\n            \"productName\": \"Product J\",\n            \"quantity\": 2,\n            \"price\": 99.98,\n            \"total\": 199.96\n        }\n    ],\n    \"branchId\": \"branch-002\",\n    \"comments\": \"Special order\",\n    \"totalAmount\": 299.96\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/orders/5cffc1b1-e56a-405f-8ef5-50dfcff2cb2b",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders",
+										"5cffc1b1-e56a-405f-8ef5-50dfcff2cb2b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "emily-update-order-for-steven-created-by-steven-shipped--deny",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"createdBy\": \"steven.jones@test.com\",\n    \"status\": \"PENDING\",\n    \"orderLines\": [\n        {\n            \"id\": \"017f064c-86fe-479c-8de6-9f0286215e6f\",\n            \"productId\": \"prod-011\",\n            \"productName\": \"Product K\",\n            \"quantity\": 2,\n            \"price\": 99.99,\n            \"total\": 99.99\n        },\n        {\n            \"id\": \"eda5de39-edc7-45a8-905c-b71b7df78f63\",\n            \"productId\": \"prod-010\",\n            \"productName\": \"Product J\",\n            \"quantity\": 2,\n            \"price\": 99.98,\n            \"total\": 199.96\n        }\n    ],\n    \"branchId\": \"branch-002\",\n    \"comments\": \"Special order\",\n    \"totalAmount\": 299.96\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/orders/d05f1bda-2c1c-4638-9765-949a7d7beb8b",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders",
+										"d05f1bda-2c1c-4638-9765-949a7d7beb8b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list-orders-as-emily--allow",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Acce",
+										"value": "application/json, text/plain, */*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "cedar-refresh",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/orders",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "sale-manager",
+			"item": [
+				{
+					"name": "get-any-order-as-chris-1--allow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Acce",
+								"value": "application/json, text/plain, */*",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "cedar-refresh",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/orders/a99806c6-5405-4102-90a6-319733c935cc",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders",
+								"a99806c6-5405-4102-90a6-319733c935cc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-any-order-as-chris-2--allow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Acce",
+								"value": "application/json, text/plain, */*",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "cedar-refresh",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/orders/9958d895-7aa6-4856-bebf-f024f899c30d",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders",
+								"9958d895-7aa6-4856-bebf-f024f899c30d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "chis-create-order-for-steven--allow",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"orderLines\": [\n        {\n            \"productId\": \"prod-014\",\n            \"productName\": \"Product N\",\n            \"quantity\": 3,\n            \"price\": 49.99,\n            \"total\": 149.97\n        }\n    ],\n    \"branchId\": \"branch-001\",\n    \"comments\": \"\",\n    \"totalAmount\": 149.98\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/orders",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "chris-create-order-for-philip--allow",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"fda9384e-ddec-4be9-83a0-29056bae94a5\",\n    \"orderLines\": [\n        {\n            \"productId\": \"prod-014\",\n            \"productName\": \"Product N\",\n            \"quantity\": 3,\n            \"price\": 49.99,\n            \"total\": 149.97\n        }\n    ],\n    \"branchId\": \"branch-001\",\n    \"comments\": \"\",\n    \"totalAmount\": 149.98\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/orders",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "chris-update-order-for-steven-created-by-steven-pending--allow",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"createdBy\": \"chris.watkin@test.com\",\n    \"status\": \"PENDING\",\n    \"orderLines\": [\n        {\n            \"id\": \"017f064c-86fe-479c-8de6-9f0286215e6f\",\n            \"productId\": \"prod-011\",\n            \"productName\": \"Product K\",\n            \"quantity\": 2,\n            \"price\": 99.99,\n            \"total\": 99.99\n        },\n        {\n            \"id\": \"eda5de39-edc7-45a8-905c-b71b7df78f63\",\n            \"productId\": \"prod-010\",\n            \"productName\": \"Product J\",\n            \"quantity\": 2,\n            \"price\": 99.98,\n            \"total\": 199.96\n        }\n    ],\n    \"branchId\": \"branch-002\",\n    \"comments\": \"Special order\",\n    \"totalAmount\": 299.96\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/orders/012dc88b-eb3c-4222-a302-4b7ec07e9b0a",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders",
+								"012dc88b-eb3c-4222-a302-4b7ec07e9b0a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "chris-update-order-for-steven-created-by-steven-shipped--deny",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"createdBy\": \"steven.jones@test.com\",\n    \"status\": \"PENDING\",\n    \"orderLines\": [\n        {\n            \"id\": \"017f064c-86fe-479c-8de6-9f0286215e6f\",\n            \"productId\": \"prod-011\",\n            \"productName\": \"Product K\",\n            \"quantity\": 2,\n            \"price\": 99.99,\n            \"total\": 99.99\n        },\n        {\n            \"id\": \"eda5de39-edc7-45a8-905c-b71b7df78f63\",\n            \"productId\": \"prod-010\",\n            \"productName\": \"Product J\",\n            \"quantity\": 2,\n            \"price\": 99.98,\n            \"total\": 199.96\n        }\n    ],\n    \"branchId\": \"branch-002\",\n    \"comments\": \"Special order\",\n    \"totalAmount\": 299.96\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/orders/d05f1bda-2c1c-4638-9765-949a7d7beb8b",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders",
+								"d05f1bda-2c1c-4638-9765-949a7d7beb8b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list-orders-as-chris--allow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Acce",
+								"value": "application/json, text/plain, */*",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "cedar-refresh",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/orders",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "account-manager",
+			"item": [
+				{
+					"name": "aron",
+					"item": [
+						{
+							"name": "get-order-as-aron-with-acc-manager-aron--allow",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Acce",
+										"value": "application/json, text/plain, */*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "cedar-refresh",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/orders/9958d895-7aa6-4856-bebf-f024f899c30d",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders",
+										"9958d895-7aa6-4856-bebf-f024f899c30d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get-order-as-aron-with-acc-manager-rebecca--deny",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 403\", function () {",
+											"    pm.response.to.have.status(403);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Acce",
+										"value": "application/json, text/plain, */*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "cedar-refresh",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/orders/01a82277-6cb5-4340-a79e-ebe57ccef67c",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders",
+										"01a82277-6cb5-4340-a79e-ebe57ccef67c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "aron-create-order-for-philip--deny",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": \"fda9384e-ddec-4be9-83a0-29056bae94a5\",\n    \"orderLines\": [\n        {\n            \"productId\": \"prod-014\",\n            \"productName\": \"Product N\",\n            \"quantity\": 3,\n            \"price\": 49.99,\n            \"total\": 149.97\n        }\n    ],\n    \"branchId\": \"branch-001\",\n    \"comments\": \"\",\n    \"totalAmount\": 149.98\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/orders",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "aron-create-order-for-steven--deny",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"orderLines\": [\n        {\n            \"productId\": \"prod-014\",\n            \"productName\": \"Product N\",\n            \"quantity\": 3,\n            \"price\": 49.99,\n            \"total\": 149.97\n        }\n    ],\n    \"branchId\": \"branch-001\",\n    \"comments\": \"\",\n    \"totalAmount\": 149.98\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/orders",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "aron-update-order-for-steven-created-by-steven-pending--deny",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"createdBy\": \"chris.watkin@test.com\",\n    \"status\": \"PENDING\",\n    \"orderLines\": [\n        {\n            \"id\": \"017f064c-86fe-479c-8de6-9f0286215e6f\",\n            \"productId\": \"prod-011\",\n            \"productName\": \"Product K\",\n            \"quantity\": 2,\n            \"price\": 99.99,\n            \"total\": 99.99\n        },\n        {\n            \"id\": \"eda5de39-edc7-45a8-905c-b71b7df78f63\",\n            \"productId\": \"prod-010\",\n            \"productName\": \"Product J\",\n            \"quantity\": 2,\n            \"price\": 99.98,\n            \"total\": 199.96\n        }\n    ],\n    \"branchId\": \"branch-002\",\n    \"comments\": \"Special order\",\n    \"totalAmount\": 299.96\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/orders/9b1a5173-a54f-4499-b11f-8c11d3ef5d2f",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders",
+										"9b1a5173-a54f-4499-b11f-8c11d3ef5d2f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list-orders-as-aron--allow",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Acce",
+										"value": "application/json, text/plain, */*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "cedar-refresh",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/orders",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "rebecca",
+					"item": [
+						{
+							"name": "rebecca-create-order-for-steven--deny",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"orderLines\": [\n        {\n            \"productId\": \"prod-014\",\n            \"productName\": \"Product N\",\n            \"quantity\": 3,\n            \"price\": 49.99,\n            \"total\": 149.97\n        }\n    ],\n    \"branchId\": \"branch-001\",\n    \"comments\": \"\",\n    \"totalAmount\": 149.98\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/orders",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "rebecca-create-order-for-philip--deny",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": \"fda9384e-ddec-4be9-83a0-29056bae94a5\",\n    \"orderLines\": [\n        {\n            \"productId\": \"prod-014\",\n            \"productName\": \"Product N\",\n            \"quantity\": 3,\n            \"price\": 49.99,\n            \"total\": 149.97\n        }\n    ],\n    \"branchId\": \"branch-001\",\n    \"comments\": \"\",\n    \"totalAmount\": 149.98\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/orders",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "rebecca-update-order-for-steven-created-by-steven-pending--deny",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"createdBy\": \"chris.watkin@test.com\",\n    \"status\": \"PENDING\",\n    \"orderLines\": [\n        {\n            \"id\": \"017f064c-86fe-479c-8de6-9f0286215e6f\",\n            \"productId\": \"prod-011\",\n            \"productName\": \"Product K\",\n            \"quantity\": 2,\n            \"price\": 99.99,\n            \"total\": 99.99\n        },\n        {\n            \"id\": \"eda5de39-edc7-45a8-905c-b71b7df78f63\",\n            \"productId\": \"prod-010\",\n            \"productName\": \"Product J\",\n            \"quantity\": 2,\n            \"price\": 99.98,\n            \"total\": 199.96\n        }\n    ],\n    \"branchId\": \"branch-002\",\n    \"comments\": \"Special order\",\n    \"totalAmount\": 299.96\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api_url}}/orders/9b1a5173-a54f-4499-b11f-8c11d3ef5d2f",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders",
+										"9b1a5173-a54f-4499-b11f-8c11d3ef5d2f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list-orders-as-rebecca--allow",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Acce",
+										"value": "application/json, text/plain, */*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "cedar-refresh",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/orders",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get-order-as-rebecca-with-acc-manager-aron--deny",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Acce",
+										"value": "application/json, text/plain, */*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "cedar-refresh",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/orders/9958d895-7aa6-4856-bebf-f024f899c30d",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders",
+										"9958d895-7aa6-4856-bebf-f024f899c30d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get-order-as-rebecca-with-acc-manager-rebecca--allow",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 403\", function () {",
+											"    pm.response.to.have.status(403);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{id_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Acce",
+										"value": "application/json, text/plain, */*",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "cedar-refresh",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{api_url}}/orders/01a82277-6cb5-4340-a79e-ebe57ccef67c",
+									"host": [
+										"{{api_url}}"
+									],
+									"path": [
+										"orders",
+										"01a82277-6cb5-4340-a79e-ebe57ccef67c"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "accountant",
+			"item": [
+				{
+					"name": "get-any-order-as-pam-1--allow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Acce",
+								"value": "application/json, text/plain, */*",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "cedar-refresh",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/orders/9b1a5173-a54f-4499-b11f-8c11d3ef5d2f",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders",
+								"9b1a5173-a54f-4499-b11f-8c11d3ef5d2f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-any-order-as-pam-2--allow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Acce",
+								"value": "application/json, text/plain, */*",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "cedar-refresh",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/orders/d05f1bda-2c1c-4638-9765-949a7d7beb8b",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders",
+								"d05f1bda-2c1c-4638-9765-949a7d7beb8b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pam-create-order-for-philip--deny",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"fda9384e-ddec-4be9-83a0-29056bae94a5\",\n    \"orderLines\": [\n        {\n            \"productId\": \"prod-014\",\n            \"productName\": \"Product N\",\n            \"quantity\": 3,\n            \"price\": 49.99,\n            \"total\": 149.97\n        }\n    ],\n    \"branchId\": \"branch-001\",\n    \"comments\": \"\",\n    \"totalAmount\": 149.98\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/orders",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pam-create-order-for-steven--deny",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"orderLines\": [\n        {\n            \"productId\": \"prod-014\",\n            \"productName\": \"Product N\",\n            \"quantity\": 3,\n            \"price\": 49.99,\n            \"total\": 149.97\n        }\n    ],\n    \"branchId\": \"branch-001\",\n    \"comments\": \"\",\n    \"totalAmount\": 149.98\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/orders",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pam-update-order-for-steven-created-by-steven-pending--deny",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"c11d3c3d-c414-4516-b0d1-93066be22726\",\n    \"createdBy\": \"chris.watkin@test.com\",\n    \"status\": \"PENDING\",\n    \"orderLines\": [\n        {\n            \"id\": \"017f064c-86fe-479c-8de6-9f0286215e6f\",\n            \"productId\": \"prod-011\",\n            \"productName\": \"Product K\",\n            \"quantity\": 2,\n            \"price\": 99.99,\n            \"total\": 99.99\n        },\n        {\n            \"id\": \"eda5de39-edc7-45a8-905c-b71b7df78f63\",\n            \"productId\": \"prod-010\",\n            \"productName\": \"Product J\",\n            \"quantity\": 2,\n            \"price\": 99.98,\n            \"total\": 199.96\n        }\n    ],\n    \"branchId\": \"branch-002\",\n    \"comments\": \"Special order\",\n    \"totalAmount\": 299.96\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/orders/4947c18d-5804-48d4-9b66-07309dea1570",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders",
+								"4947c18d-5804-48d4-9b66-07309dea1570"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list-orders-as-pam--allow",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{id_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Acce",
+								"value": "application/json, text/plain, */*",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "cedar-refresh",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/orders",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
