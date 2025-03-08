@@ -22,4 +22,6 @@ export interface Config {
   account: string;
   domain: Domain;
   region: string;
+  organisationName: string;
+  cedarLambdaLayerARN: string;
 }

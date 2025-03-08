@@ -4,6 +4,8 @@ import { getCustomerByIDDynamoDbAdapter } from '@adapters/secondary/get-customer
 import { getOrderByIdDynamoDbAdapter } from '@adapters/secondary/get-order-dynamo-db-adapter';
 import { getLogger } from '@shared/monitor';
 import { updateOrderDynamoDbAdapter } from '@adapters/secondary/update-order-dynamo-db-adapter';
+import { authoriseRequest } from '@adapters/secondary/authorisation-adapter';
+import { OrderAuthAction } from '../../types';
 
 const logger = getLogger({ serviceName: 'updateOrderUseCase' });
 
@@ -44,10 +46,12 @@ export async function updateOrderUseCase(
     const updatedOrder = Order.fromDTO({
       ...updatedOrderDTO,
       id,
+      createdBy: order.createdBy,
       createdDateTime: order.createdDateTime.toISOString(),
       customer: customer.toDTO(),
     } as OrderDTO);
 
+    await authoriseRequest(OrderAuthAction.UPDATE_ORDER, order);
     await updatedOrder.validate();
 
     // send updated order and the lines that need to be deleted to the secondary adapter.

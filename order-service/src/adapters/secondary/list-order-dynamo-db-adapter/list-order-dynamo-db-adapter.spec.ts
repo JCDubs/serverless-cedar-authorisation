@@ -1,18 +1,24 @@
 import {listOrderDynamoDbAdapter} from './list-order-dynamo-db-adapter';
 import {marshall} from '@aws-sdk/util-dynamodb';
 import {DynamoDBClient} from '@aws-sdk/client-dynamodb';
-import {OrderModel} from '@models/order';
+import {Order as OrderModel} from '@models/order';
 import {v4 as uuid} from 'uuid';
 
 jest.mock('@aws-sdk/client-dynamodb');
 
 describe('listOrderDynamoDbAdapter tests', () => {
-  const mockOrder: OrderModel = OrderModel.fromDto({
+  const mockOrder: OrderModel = OrderModel.fromDTO({
     id: uuid(),
-    // Other required properties
-    name: 'Listed Order',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    customer: {
+      id: undefined,
+      name: '',
+      email: '',
+      accountManager: '',
+      createdDateTime: undefined,
+      updatedDateTime: undefined
+    },
+    createdBy: '',
+    branchId: ''
   });
 
   beforeEach(() => {

@@ -1,0 +1,44 @@
+namespace OrderService {
+
+    entity Role;
+    entity User in [Role];
+
+    entity Order = {
+        createdBy: User,
+        customer: User,
+        accountManager: User,
+        status: String
+    };
+
+    action "createOrder" appliesTo {    
+      principal: [User],    
+      resource: [Order],    
+      context: {}    
+    };
+
+    action "updateOrder" appliesTo {    
+      principal: [User],    
+      resource: [Order],    
+      context: {}    
+    };
+
+    action "deleteOrder" appliesTo {    
+      principal: [User],    
+      resource: [Order],    
+      context: {}    
+    };
+
+    action "getOrder" appliesTo {    
+      principal: [User],    
+      resource: [Order],    
+      context: {
+      }    
+    };
+
+    action "listOrders" appliesTo {    
+      principal: [User],    
+      resource: [Order],    
+      context: {
+      } 
+    };
+}

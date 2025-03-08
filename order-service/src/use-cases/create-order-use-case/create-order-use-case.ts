@@ -4,6 +4,8 @@ import { OrderDTO, NewOrderDTO } from '@dto/order-dto';
 import { createOrderDynamoDbAdapter } from '@adapters/secondary/create-order-dynamo-db-adapter';
 import { getCustomerByIDDynamoDbAdapter } from '@adapters/secondary/get-customer-dynamo-db-adapter';
 import { getLogger } from '@shared/monitor';
+import { authoriseRequest } from '@adapters/secondary/authorisation-adapter';
+import { OrderAuthAction } from '../../types';
 
 const logger = getLogger({ serviceName: 'createOrderUseCase' });
 
@@ -21,6 +23,7 @@ export async function createOrderUseCase(
     );
     const newOrder = Order.fromNewOrderDTO(newOrderDto, customer.toDTO());
     logger.debug('Converted newOrderDto into order', { newOrderDto, newOrder });
+    await authoriseRequest(OrderAuthAction.CREATE_ORDER, newOrder);
     await newOrder.validate();
     const createdOrder = await createOrderDynamoDbAdapter(newOrder);
     logger.info('Created order', { createdOrder });

@@ -3,6 +3,8 @@ import {captureLambdaHandler} from '@aws-lambda-powertools/tracer';
 import middy from '@middy/core';
 import {Handler} from 'aws-lambda';
 import {getLogger, tracer} from '@shared/monitor';
+import { loadCedarAuthorization } from 'common-sdk';
+import { authorizationConfig, authorizationServiceConfig } from '@config/config';
 
 const logger = getLogger({serviceName: 'order-service'});
 
@@ -16,5 +18,6 @@ export const wrapper = <T extends Handler>(
 ): middy.MiddyfiedHandler => {
   return middy(handler)
     .use(injectLambdaContext(logger))
-    .use(captureLambdaHandler(tracer));
+    .use(captureLambdaHandler(tracer))
+    .use(loadCedarAuthorization(authorizationConfig, authorizationServiceConfig));
 };

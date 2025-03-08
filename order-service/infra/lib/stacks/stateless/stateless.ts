@@ -19,30 +19,37 @@ export class StatelessStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props: OrdersStatelessStackProps) {
     super(scope, id, props);
 
+    const cedarLayer = lambda.LayerVersion.fromLayerVersionArn(this, 'CedarLambdaLayer', props.cedarLambdaLayerARN);
+
     const createOrderLambda = this.createOrderAPILambda(
       'CreateOrderService',
       'api-create-order-adapter',
       props,
+      [cedarLayer],
     );
     const updateOrderLambda = this.createOrderAPILambda(
       'UpdateOrderService',
       'api-update-order-adapter',
       props,
+      [cedarLayer],
     );
     const deleteOrderLambda = this.createOrderAPILambda(
       'DeleteOrderService',
       'api-delete-order-adapter',
       props,
+      [cedarLayer],
     );
     const getOrderLambda = this.createOrderAPILambda(
       'GetOrderService',
       'api-get-order-adapter',
       props,
+      [cedarLayer],
     );
     const listOrderLambda = this.createOrderAPILambda(
       'ListOrderService',
       'api-list-order-adapter',
       props,
+      [cedarLayer],
     );
 
     props.orderTable.grantReadWriteData(createOrderLambda);
@@ -93,6 +100,7 @@ export class StatelessStack extends cdk.Stack {
     serviceName: string,
     entryFileName: string,
     props: OrdersStatelessStackProps,
+    lambdaLayers: lambda.ILayerVersion[],
     environmentVariables?: Record<string, string>,
   ) {
     return new njsLambda.NodejsFunction(this, serviceName, {
@@ -112,8 +120,10 @@ export class StatelessStack extends cdk.Stack {
         SERVICE_NAME: config.service,
         ENVIRONMENT: props.environment,
         POWERTOOLS_SERVICE_NAME: serviceName,
+        ORGANISATION_NAME: props.organisationName,
         ...environmentVariables,
       },
+      layers: lambdaLayers,
       bundling: {
         minify: true,
         externalModules: ['@aws-sdk/*', '@cedar-policy/cedar-wasm/nodejs'],

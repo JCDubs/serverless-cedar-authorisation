@@ -9,7 +9,7 @@ import { Resource } from 'aws-cdk-lib';
  * @extends CityStackProps
  */
 export interface PolicyStoreProps extends cdk.StackProps {
-  cedarDirectoryPath: string;
+  policyDirectoryPath: string;
   serviceName: string;
   organisationName: string;
 }
@@ -27,7 +27,7 @@ export class AuthPolicyStore extends Resource {
   constructor(
     scope: Construct,
     id: string,
-    { cedarDirectoryPath, serviceName, organisationName }: PolicyStoreProps
+    { policyDirectoryPath, serviceName, organisationName }: PolicyStoreProps
   ) {
     super(scope, id);
 
@@ -39,7 +39,7 @@ export class AuthPolicyStore extends Resource {
 
     new BucketDeployment(this, 'PolicyDeployments', {
       destinationBucket: this.policyStoreBucket,
-      sources: [Source.asset(cedarDirectoryPath)],
+      sources: [Source.asset(policyDirectoryPath)],
       destinationKeyPrefix: `${serviceName}/policy`,
     });
   }

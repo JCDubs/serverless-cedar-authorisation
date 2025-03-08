@@ -22,8 +22,6 @@ The framework follows clean architecture principles, SOLID design, and AWS Well-
 Reusable AWS CDK constructs for Cedar-based authorization infrastructure:
 
 - `AuthPolicyStore`: Interface to work with a centralized Cedar authorization policy store
-- `NodejsLambda`: Enhanced Lambda construct with monitoring and authorization
-- `LambdaMonitoring`: Adds standard logging, metrics, and tracing to Lambda functions
 
 ### common-resources
 

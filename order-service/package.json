@@ -33,6 +33,9 @@
     "@middy/core": "^4.7.0",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
+    "common-cdk": "file:../common-cdk",
+    "common-sdk": "file:../common-sdk",
+    "constructs": "^10.0.0",
     "convict": "^6.2.4",
     "uuid": "^11.0.3"
   },
@@ -63,6 +66,7 @@
     ]
   },
   "devDependencies": {
+    "@cedar-policy/cedar-wasm": "4.3.3",
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
     "@types/aws-lambda": "8.10.147",
@@ -70,7 +74,7 @@
     "@types/jest": "^29.5.14",
     "@types/node": "^22.10.1",
     "@types/uuid": "^10.0.0",
-    "aws-cdk-lib": "^2.171.1",
+    "aws-cdk-lib": "2.171.1",
     "aws-lambda": "^1.0.7",
     "constructs": "^10.4.2",
     "conventional-changelog-conventionalcommits": "^8.0.0",

@@ -1,5 +1,6 @@
 import { Country, Domain } from '@infra/types';
 import convict from 'convict';
+import { AuthorizationConfigType, ServiceConfig } from 'common-sdk';
 
 export const config = convict({
   tableName: {
@@ -37,4 +38,22 @@ export const config = convict({
     default: 'undefined',
     env: 'ENVIRONMENT',
   },
+  organisationName: {
+    doc: 'The name of the organisation',
+    format: String,
+    default: 'undefined',
+    env: 'ORGANISATION_NAME',
+  },
 }).validate({allowed: 'strict'});
+
+export const authorizationServiceConfig: ServiceConfig = {
+  serviceName: config.get('serviceName'),
+  organisationName: config.get('organisationName'),
+}
+
+export const authorizationConfig: AuthorizationConfigType = {
+  namespace: 'OrderService::',
+  principleType: 'User',
+  resourceType: 'Order',
+  roleType: 'Role',
+};

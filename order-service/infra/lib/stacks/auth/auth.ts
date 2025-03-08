@@ -1,13 +1,22 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import * as cognito from 'aws-cdk-lib/aws-cognito';
+import {AuthPolicyStore} from 'common-cdk';
+import * as s3 from 'aws-cdk-lib/aws-s3';
+import path from 'path';
+import { SERVICE } from '@infra/constants';
+import { Config } from '@infra/types';
+
+export interface AuthStackProps extends cdk.StackProps, Config {}
+
 
 export class AuthStack extends cdk.Stack {
   readonly userPool: cognito.UserPool;
   readonly userPoolClient: cognito.UserPoolClient;
   readonly identityPool: cognito.CfnIdentityPool;
+  readonly policyStoreBucket: s3.IBucket;
 
-  constructor(scope: Construct, id: string, props: cdk.StackProps) {
+  constructor(scope: Construct, id: string, props: AuthStackProps) {
     super(scope, id, props);
 
     this.userPool = new cognito.UserPool(this, 'orders-user-pool', {
@@ -74,6 +83,12 @@ export class AuthStack extends cdk.Stack {
         ],
       },
     );
+
+    this.policyStoreBucket = new AuthPolicyStore(this, 'AuthPolicyStore', {
+      serviceName: SERVICE,
+      organisationName: props.organisationName,
+      policyDirectoryPath: path.resolve(__dirname, '../../../../authorisation')
+    }).policyStoreBucket;
 
     new cdk.CfnOutput(this, 'UserPoolClientId', {
       value: userPoolClient.userPoolClientId,
