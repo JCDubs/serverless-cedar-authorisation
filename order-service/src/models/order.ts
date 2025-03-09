@@ -5,13 +5,13 @@ import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import { orderSchema } from '@schemas/order-schema';
 import { getLogger } from '@shared/monitor';
-import { UserDetailService } from '@use-cases/user-details-service';
 import { CustomerDTO } from '@dto/customer-dto';
 import { DynamoOrderDTO, DynamoOrderLineDTO } from '@dto/dynamo-order-dto';
 import { Customer } from './customer';
 import { putMetric, metrics, validate } from '@shared/index';
 import { OrderLineType, OrderType } from './order-types';
 import { ValidationError } from '@errors/validation-error';
+import { UserDetailService } from 'common-sdk';
 
 const ajv = new Ajv();
 addFormats(ajv);

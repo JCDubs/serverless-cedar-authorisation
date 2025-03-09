@@ -5,6 +5,7 @@ import {Handler} from 'aws-lambda';
 import {getLogger, tracer} from '@shared/monitor';
 import { loadCedarAuthorization } from 'common-sdk';
 import { authorizationConfig, authorizationServiceConfig } from '@config/config';
+import { loadErrorMiddleware } from '@errors/error-middleware';
 
 const logger = getLogger({serviceName: 'order-service'});
 
@@ -19,5 +20,6 @@ export const wrapper = <T extends Handler>(
   return middy(handler)
     .use(injectLambdaContext(logger))
     .use(captureLambdaHandler(tracer))
-    .use(loadCedarAuthorization(authorizationConfig, authorizationServiceConfig));
+    .use(loadCedarAuthorization(authorizationConfig, authorizationServiceConfig))
+    .use(loadErrorMiddleware());
 };

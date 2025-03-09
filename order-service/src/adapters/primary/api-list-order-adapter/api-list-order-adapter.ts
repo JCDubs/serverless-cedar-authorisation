@@ -1,5 +1,4 @@
 import {APIGatewayProxyEvent, APIGatewayProxyResult} from 'aws-lambda';
-import {errorHandler} from '@shared/index';
 import {wrapper} from '@shared/index';
 import {OrderDTO} from '@dto/order-dto';
 import {listOrderUseCase} from '@use-cases/list-order-use-case';
@@ -11,8 +10,7 @@ import * as apiUtils from '@shared/api-utils';
 export const listOrderAdapter = async (
   event: APIGatewayProxyEvent,
 ): Promise<APIGatewayProxyResult> => {
-  try {
-    const paginationParams: apiUtils.PaginationParams =
+  const paginationParams: apiUtils.PaginationParams =
       apiUtils.parseAndValidateQueryParameters(
         event.queryStringParameters || {},
       );
@@ -24,9 +22,6 @@ export const listOrderAdapter = async (
       statusCode: 200,
       body: JSON.stringify(orderList),
     };
-  } catch (error) {
-    return errorHandler(error);
-  }
 };
 
 export const handler = wrapper(listOrderAdapter);
