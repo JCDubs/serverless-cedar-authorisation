@@ -6,6 +6,8 @@ This project implements a comprehensive granular authorization framework using A
 
 The framework follows clean architecture principles, SOLID design, and AWS Well-Architected best practices to ensure maintainability, scalability, and security.
 
+This project repository accompanies the blog post [Serverless Granular Authorisation with Cedar — High Control, Minimal Cost 🔐⚡💰](https://medium.com/@jcdubs/serverless-granular-authorisation-with-cedar-high-control-minimal-cost-1149640f8cd9)
+
 ## Key Features
 
 - **Fine-grained Authorization**: Role-based access control with Cedar Policy language
